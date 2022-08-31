@@ -44,8 +44,8 @@ export default function App() {
 }
 
 function Items(props) {
-  let changeData = [];
-  let flag = false;
+  let changeData;
+ 
 
   let filterData = function (start, end, arr_ref = []) {
     let arr = arr_ref;
@@ -60,11 +60,9 @@ function Items(props) {
 
       filterData(start, end, arr);
     } else {
-      if (props.data) {
-        return arr;
-      } else {
+      if (!props.data) {
         arr = bucket;
-      }
+      } 
     }
 
     return arr;
